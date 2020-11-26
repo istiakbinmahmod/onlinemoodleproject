@@ -1,0 +1,12 @@
+{% extends "login/base.html" %}
+{% load static %}
+{% block body_block %}
+    <div class="jumbotron">
+     <h1>This is Moodle Homepage!</h1>
+    </div>
+    <h1> {{isLoggedIn}} </h1>
+
+    <h1>{{ message }}</h1>
+    <img src = {% static 'images/Screenshot (354).png' %}
+
+{% endblock %}

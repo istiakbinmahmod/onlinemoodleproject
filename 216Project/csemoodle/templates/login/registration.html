@@ -1,0 +1,49 @@
+{% extends "login/base.html" %}
+
+{% block body_block %}
+    <div class="jumbotron">
+     {% if registered %}
+         <h1>
+         Thank you for registraion.
+         </h1>
+     {% else %}
+         <h1>
+         Register Here!
+         </h1>
+         <h3>Fill out the registration form!</h3>
+         <form action="{% url 'login:register' %}" method="post">
+            {% csrf_token %}
+             <label for="profileid">Profile ID :</label>
+            <input type="text" name="profileid" >
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter Username">
+             <label for="emailid">Email Id:</label>
+            <input type="text" name="emailid">
+             <label for="dateofbirth">Date of Birth :</label>
+            <input type="date" name="dateofbirth">
+            <label for="city">City :</label>
+            <input type="text" name="city">
+             <label for="street">Street :</label>
+            <input type="text" name="street">
+             <label for="password">Enter Password :</label>
+            <input type="password" name="password">
+              <p>Please select your Role:</p>
+             <input type="radio" id="Teacher" name="Role" value="Teacher">
+            <label for="Teacher">Teacher</label><br>
+             <input type="radio" id="Student" name="Role" value="Student">
+            <label for="Student">Student</label><br>
+
+            <input type="submit" value="Register">
+        </form>
+
+
+
+         </form>
+
+
+     {% endif %}
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "login/base.html" %}
+{% block body_block %}
+<div class="jumbotron">
+<h1>Please LOG IN</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" placeholder="Enter Username">
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+    <input type="submit" value="LOGIN">
+    <input type="file" name="pro_pic" id="pro_pic">
+</form>
+</div>
+{% endblock %}

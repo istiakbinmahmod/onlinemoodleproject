@@ -1,0 +1,23 @@
+{% extends "login/base.html" %}
+{% block body_block %}
+    <div class="jumbotron">
+        <h1>Course List</h1>
+<table width="100%"  border="1">
+    <tr style="background-color:lightgray">
+        <th>COURSE_ID</th>
+        <th>SESSION</th>
+        <th>TITLE</th>
+        <th>CREDIT HOUR</th>
+    </tr>
+    {% for c in COURSE %}
+       <tr>
+           <td>{{c.course_id}}</td>
+           <td>{{c.session_id }}</td>
+           <td>{{c.course_title}}</td>
+           <td>{{c.credit_hour}}</td>
+       </tr>
+
+    {% endfor %}
+</table>
+    </div>
+{% endblock %}

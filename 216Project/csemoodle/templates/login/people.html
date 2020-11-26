@@ -1,0 +1,33 @@
+{% extends "login/base.html" %}
+{% block body_block %}
+    <div class="jumbotron">
+        <h1>People List</h1>
+<table width="100%"  border="1">
+    <tr style="background-color:lightgray">
+        <th>PROFILE_ID</th>
+        <th>NAME</th>
+        <th>EMAIL_ID</th>
+        <th>DOB</th>
+        <th>CITY</th>
+        <th>STREET</th>
+
+        <th> STudent</th>
+        <th> Teacher</th>
+    </tr>
+    {% for p in PEOPLE_PROFILE %}
+       <tr>
+           <td>{{p.pro_id}}</td>
+           <td>{{p.pro_name }}</td>
+           <td>{{p.pro_email}}</td>
+           <td>{{p.pro_dob}}</td>
+             <td>{{p.pro_city}}</td>
+           <td>{{p.pro_street}}</td>
+
+            <td>{{ p.pro_student }}</td>
+            <td>{{ p.pro_teacher }}</td>
+       </tr>
+
+    {% endfor %}
+</table>
+    </div>
+{% endblock %}
